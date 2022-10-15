@@ -1,0 +1,80 @@
+##### Server Configuration (wg0)
+
+[Interface]
+Address = 192.168.69.1/24, fd42:42:42::1/64
+SaveConfig = true
+PostUp = iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE; ip6tables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
+PostDown = iptables -t nat -D POSTROUTING -o enp0s3 -j MASQUERADE; ip6tables -t nat -D POSTROUTING -o enp0s3 -j MASQUERADE
+ListenPort = 51820
+PrivateKey = <Private Key of Server>
+
+##### change enp0s3 to server's default network interface name (like eth0, etc)
+
+[Peer]
+PublicKey = <Public Key of Client>
+AllowedIPs = 192.168.69.2/32, fd42:42:42::2/128
+
+##### Client Configuration
+
+[Interface]
+PrivateKey = <Private Key of Client>
+Address = 192.168.69.2/32, fd42:42:42::2/128
+DNS = 8.8.8.8
+
+[Peer]
+PublicKey = <Public Key of Server>
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = <Server IP>:51820
+
+##### Additional Commands
+
+nano /etc/sysctl.conf			# Enable IPV4 and IPV6 forwarding
+systemctl enable wg-quick@wg0	# Set wireguard to start on boot
+ip a							# Find Interface Name
+wg genkey | tee privatekey | wg pubkey > publickey		# Generate Private and Public Keys
+cd /etc/wireguard				# Default Wireguard Directory
+nano wg0.conf					# Default WG Interface Name
+wg-quick up wg0
+wg-quick down wg0
+wg show
+wg set wg0 peer <Client Public Key>= allowed-ips <Client Unique IP Address(eg: 192.168.69.3/32, fd42:42:42::3/128)>
+sample:
+wg set wg0 peer cVU13uIpVWxCPE40uRB9ItoUQSq1rRuSuYncYWawViI= allowed-ips 192.168.69.3/32, fd42:42:42::3/128
+
+##### To open all ports at startup(only reqd for OCI)
+
+Auto open port https://www.youtube.com/watch?v=fYQBvjYQ63U
+systemctl enable iptables-service.conf
+nano iptables-startup.sh
+
+#!/bin/sh
+
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -F
+
+ip6tables -P INPUT ACCEPT
+ip6tables -P OUTPUT ACCEPT
+ip6tables -P FORWARD ACCEPT
+ip6tables -F
+
+
+
+chmod +x iptables-startup.sh
+cd /etc/systemd/system
+nano iptables-startup.service
+
+[Unit]
+Description=iptables startup
+
+[Service]
+ExecStart=/home/ubuntu/iptables-startup.sh
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl start iptables-startup
+sudo systemctl enable iptables-startup
+sudo systemctl status iptables-startup
+
