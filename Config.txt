@@ -59,7 +59,7 @@ ip6tables -P OUTPUT ACCEPT
 ip6tables -P FORWARD ACCEPT
 ip6tables -F
 
-
+## Make iptables-startup.sh executable and run on startup
 
 chmod +x iptables-startup.sh
 cd /etc/systemd/system
