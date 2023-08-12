@@ -12,3 +12,7 @@ India: 162.159.195.8
 > May route to nearest default Server [Changes with each city]
 
 Kolkata: 162.159.193.4
+<br>
+Endpoint Ports: All UDP<br>
+Default: 2408
+Alternatives: 500, 1701, 4500
