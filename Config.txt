@@ -91,5 +91,7 @@ ip6tables -P OUTPUT ACCEPT
 ip6tables -P FORWARD ACCEPT
 ip6tables -F
 
-About persistence, there are versions of the saved iptables stored at /etc/iptables/rules.v4 and /etc/iptables/rules.v6 (Debian/Ubuntu). 
-You can generate content for these files with iptables-save and ip6tables-save respectively.
+There are versions of the saved iptables stored at /etc/iptables/rules.v4 and /etc/iptables/rules.v6 (Debian/Ubuntu). 
+For Saving to those files for persistance across reboots:
+sudo sh -c '/sbin/iptables-save > /etc/iptables/rules.v4'
+sudo sh -c '/sbin/iptables6-save > /etc/iptables/rules.v6'
