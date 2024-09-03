@@ -36,9 +36,8 @@ sample:
 wg set wg0 peer cVU13uIpVWxCPE40uRB9ItoUQSq1rRuSuYncYWawViI= allowed-ips 192.168.69.3/32, fd42:42:42::3/128
 ```
 
-#### To open all ports at startup (only for Oracle Cloud)
+#### [To open all ports at startup (only for Oracle Cloud)](https://www.youtube.com/watch?v=fYQBvjYQ63U)
 
-Auto open port https://www.youtube.com/watch?v=fYQBvjYQ63U
 ```
 systemctl enable iptables-service.conf
 nano iptables-startup.sh
