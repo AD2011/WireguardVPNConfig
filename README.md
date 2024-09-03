@@ -1,7 +1,7 @@
 # Wireguard VPN Client Server Setup
 Config for setup of personal VPN based on Wireguard Protocol with Dual Stack Support (IPv4 and IPv6)
 
-Refer [Sample Server Config.conf](https://github.com/AD2011/WireguardVPNConfig/blob/main/Sampe%20Server%20Config.conf) for instructions on server.
+Refer [Sample Server Config.conf](https://github.com/AD2011/WireguardVPNConfig/blob/main/Sample%20Client%20Config.conf) for instructions on server.
 
 Refer [Sample Client Config.conf](https://github.com/AD2011/WireguardVPNConfig/blob/main/Sampe%20Client%20Config.conf) for instructions on client.
 
