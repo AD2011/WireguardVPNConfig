@@ -20,7 +20,7 @@ Default: `2408`
 
 Alternatives: `500, 1701, 4500`
 
-### Additional Commands
+## Additional Commands
 ```
 nano /etc/sysctl.conf			                            # Enable IPV4 and IPV6 forwarding
 systemctl enable wg-quick@wg0	                        # Set wireguard to start on boot
@@ -56,7 +56,7 @@ ip6tables -P FORWARD ACCEPT
 ip6tables -F
 ```
 
-## Make iptables-startup.sh executable and run on startup
+#### Make iptables-startup.sh executable and run on startup
 ```
 chmod +x iptables-startup.sh
 cd /etc/systemd/system
@@ -76,7 +76,7 @@ sudo systemctl enable iptables-startup
 sudo systemctl status iptables-startup
 ```
 
-## Alternate way to enable persistant iptables all acecept on Oracle Cloud  [Only recommend if you have good firewall rules on the Oracle Cloud Console]
+#### Alternate way to enable persistant iptables all acecept on Oracle Cloud  [Only recommend if you have good firewall rules on the Oracle Cloud Console]
 ```
 sudo su
 iptables -P INPUT ACCEPT
