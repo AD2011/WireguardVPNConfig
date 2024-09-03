@@ -9,15 +9,15 @@ Refer [CloudflareWarp-Wireguard.conf](https://github.com/AD2011/WireguardVPNConf
 
 ## Endpoints:
 Deafult [Anycast]: `engage.cloudflareclient.com`
-> May route to Europe due to peering issues betwwwn Cloudflare and Airtel/Jio
+> May route to Europe due to peering issues between Cloudflare and Airtel/Jio
 
 India: `162.159.195.8` or `162.159.193.4`
 > May route to nearest default Server [Changes with each city]
-<br>
+
 Endpoint Ports: `All UDP`
-<br>
+
 Default: `2408`
-<br>
+
 Alternatives: `500, 1701, 4500`
 
 ### Additional Commands
@@ -36,7 +36,7 @@ sample:
 wg set wg0 peer cVU13uIpVWxCPE40uRB9ItoUQSq1rRuSuYncYWawViI= allowed-ips 192.168.69.3/32, fd42:42:42::3/128
 ```
 
-#### To open all ports at startup(only reqd for OCI)
+#### To open all ports at startup (only for Oracle Cloud)
 
 Auto open port https://www.youtube.com/watch?v=fYQBvjYQ63U
 ```
