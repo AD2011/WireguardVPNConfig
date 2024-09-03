@@ -7,7 +7,7 @@ Refer [Sample Client Config.conf](https://github.com/AD2011/WireguardVPNConfig/b
 
 Refer [CloudflareWarp-Wireguard.conf](https://github.com/AD2011/WireguardVPNConfig/blob/main/CloudflareWarp-Wireguard.conf) for creating Warp Wireguard Configuration. 
 
-## Endpoints:
+## Cloudflare Warp Endpoints:
 Deafult [Anycast]: `engage.cloudflareclient.com`
 > May route to Europe due to peering issues between Cloudflare and Airtel/Jio
 
