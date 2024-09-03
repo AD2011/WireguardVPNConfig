@@ -3,7 +3,7 @@ Config for setup of personal VPN based on Wireguard Protocol with Dual Stack Sup
 
 Refer [Sample Server Config.conf](https://github.com/AD2011/WireguardVPNConfig/blob/main/Sample%20Client%20Config.conf) for instructions on server.
 
-Refer [Sample Client Config.conf](https://github.com/AD2011/WireguardVPNConfig/blob/main/Sampe%20Client%20Config.conf) for instructions on client.
+Refer [Sample Client Config.conf](https://github.com/AD2011/WireguardVPNConfig/blob/main/Sample%20Client%20Config.conf) for instructions on client.
 
 Refer [CloudflareWarp-Wireguard.conf](https://github.com/AD2011/WireguardVPNConfig/blob/main/CloudflareWarp-Wireguard.conf) for creating Warp Wireguard Configuration. 
 
