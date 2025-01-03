@@ -11,7 +11,7 @@ Refer [CloudflareWarp-Wireguard.conf](https://github.com/AD2011/WireguardVPNConf
 Deafult [Anycast]: `engage.cloudflareclient.com`
 > May route to Europe due to peering issues between Cloudflare and Airtel/Jio
 
-India: `162.159.195.8` or `162.159.193.4`
+India: `162.159.195.8` or `162.159.193.4` or `162.159.198.1`
 > May route to nearest default Server [Changes with each city]
 
 Endpoint Ports: `All UDP`
